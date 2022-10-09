@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [SleepFeelingEntity::class], version = 2)
+@Database(entities = [SleepFeelingEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun sleepFeelDao(): SleepFeelDao
 
@@ -22,7 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
-                AppDatabase::class.java, "SleepFeels-db"
+                AppDatabase::class.java, "SleepFeel-database2"
             ).build()
     }
 }
