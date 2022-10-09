@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BeFit</string>
+    <string name="average_hours_of_sleep">Average hours of sleep: </string>
+    <string name="_8_5_hours">8.5 hours</string>
+    <string name="average_feeling">Average Feeling: </string>
+    <string name="_5_10">5/10</string>
+    <string name="july_1_1995">July 1, 1995</string>
+    <string name="slept">Slept</string>
+    <string name="how_much_did_you_sleep_last_night">How much did you sleep (Hours)</string>
+    <string name="_5">5</string>
+    <string name="any_other_notes">Any Notes?</string>
+    <string name="save">SAVE</string>
+    <string name="date">date</string>
+</resources>

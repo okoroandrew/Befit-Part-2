@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize">18sp</dimen>
+    <dimen name="editTextTextSize">18sp</dimen>
+    <dimen name="itemViewHolderLarge">25dp</dimen>
+    <dimen name="itemViewHolderSmall">20dp</dimen>
+    <dimen name="itemViewHolderLargeMargin">130dp</dimen>
+    <dimen name="itemViewHoldersmallMargin">16dp</dimen>
+</resources>
