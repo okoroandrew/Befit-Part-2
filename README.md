@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 
 - [x] **Create a UI for tracking averages and trends in metrics**
 - [x] **Improve and customize the user interface through styling and coloring**
-- [] **Implement orientation responsivity**
+- [ ] **Implement orientation responsivity**
 - [ ] **Add a daily photo feature**
 
 The following **additional** features are implemented:
@@ -33,6 +33,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='walkthrough2.gif' title='Video Walkthrough. Data persist after restarting the app' width='' alt='Video Walkthrough' />
 
 [peek](https://github.com/phw/peek) for Linux. -->
 
