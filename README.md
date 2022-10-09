@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 
 - [x] **Create a UI for tracking averages and trends in metrics**
 - [x] **Improve and customize the user interface through styling and coloring**
-- [x] **Implement orientation responsivity**
+- [] **Implement orientation responsivity**
 - [ ] **Add a daily photo feature**
 
 The following **additional** features are implemented:
