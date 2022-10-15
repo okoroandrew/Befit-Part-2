@@ -10,6 +10,15 @@ interface SleepFeelDao {
     @Query("SELECT * FROM sleep_feeling_table")
     fun getAll(): Flow<List<SleepFeelingEntity>>
 
+    @Query("SELECT sleepHours FROM sleep_feeling_table")
+    fun getAllSleep() : List<String>
+
+    @Query("SELECT feeling FROM sleep_feeling_table")
+    fun getAllFeeling(): List<String>
+
+    @Query("SELECT date FROM sleep_feeling_table")
+    fun getAllDate(): List<String>
+
     @Insert
     fun insertAll(sleepFeelings: List<SleepFeelingEntity>)
 

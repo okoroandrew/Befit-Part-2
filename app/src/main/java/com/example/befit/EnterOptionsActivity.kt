@@ -26,7 +26,7 @@ class EnterOptionsActivity : AppCompatActivity() {
     private lateinit var selectedDate: String
     private lateinit var monthInput: String
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    //@RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEnterOptionsBinding.inflate(layoutInflater)
@@ -54,7 +54,7 @@ class EnterOptionsActivity : AppCompatActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    //@RequiresApi(Build.VERSION_CODES.N)
     private fun clickDatePicker(){
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(android.icu.util.Calendar.YEAR)

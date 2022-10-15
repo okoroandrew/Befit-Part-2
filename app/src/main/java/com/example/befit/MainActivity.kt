@@ -5,9 +5,12 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.befit.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarMenu
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
@@ -15,54 +18,38 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding1: ActivityMainBinding
-    private var sleepFeels: ArrayList<SleepFeeling> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding1 = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding1.root)
 
-        binding1.addFab.setOnClickListener{
-            val intent = Intent(this, EnterOptionsActivity::class.java)
-            startActivity(intent)
+
+        // find bottom navigation
+        val bottomNavigation : BottomNavigationView = binding1.bottomNavigation
+
+        // define fragments here
+        val listFragment: ListFragment = ListFragment()
+        val dashboardFragment: DashboardFragment = DashboardFragment()
+
+        // Handle Navigation selection
+        bottomNavigation.setOnItemSelectedListener { item ->
+            lateinit var fragment: Fragment
+            when (item.itemId){
+                R.id.list_bottom_navigation -> fragment = listFragment
+                R.id.dashboard_bottom_navigation -> fragment = dashboardFragment
+            }
+            swapFragment(fragment)
+            true
         }
+        // Set default selected fragment
+        bottomNavigation.selectedItemId = R.id.list_bottom_navigation
     }
 
-    override fun onResume() {
-        super.onResume()
 
-        val sleepFeelAdapter = ItemsAdapter(sleepFeels)
-        binding1.recyclerView.adapter = sleepFeelAdapter
-
-        // Get all items from the database and populate the SleepFeeling class for the adapter
-        lifecycleScope.launch{
-            (application as SleepFeelingApplication).db.sleepFeelDao().getAll().collect { databaseList ->
-                databaseList.map{entity->
-                    SleepFeeling(
-                        entity.sleepHours,
-                        entity.feeling,
-                        entity.note,
-                        entity.date
-                    )
-                }.also{mappedList->
-                    sleepFeels.clear()
-                    sleepFeels.addAll(mappedList)
-                    sleepFeelAdapter.notifyDataSetChanged()
-                }
-            }
-        }
-
-        binding1.recyclerView.layoutManager = LinearLayoutManager(this)
-
-        //Get the averageSleep and averageFeeling update the view
-        lifecycleScope.launch(IO){
-            val averageSleep = (application as SleepFeelingApplication).db.sleepFeelDao().averageSleep()
-            val averageFeeling = (application as SleepFeelingApplication).db.sleepFeelDao().averageFeeling()
-
-            binding1.hoursOfSleepTextView.text = averageSleep.toString()
-            binding1.averageFeelingTextView.text = ("$averageFeeling/10")
-        }
-
-
+    private fun swapFragment(fragment: Fragment){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_frame_layout, fragment).commit()
     }
 }
