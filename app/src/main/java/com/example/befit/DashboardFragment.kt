@@ -34,7 +34,7 @@ class DashboardFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDashboardBinding.inflate(inflater,container,false)
-        analysis()
+        //analysis()
         makeLineChart()
         return binding.root
     }
@@ -59,7 +59,17 @@ class DashboardFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.IO){
             sleeps = (activity?.application as SleepFeelingApplication).db.sleepFeelDao().getAllSleep() as ArrayList<String>
             feelings = (activity?.application as SleepFeelingApplication).db.sleepFeelDao().getAllFeeling() as ArrayList<String>
+            val averageSleep = (activity?.application as SleepFeelingApplication).db.sleepFeelDao().averageSleep()
+            val averageFeeling = (activity?.application as SleepFeelingApplication).db.sleepFeelDao().averageFeeling()
 
+            //calculate average feeling and sleep
+            val hos = binding.hoursOfSleepTextView
+            val af = binding.averageFeelingTextView
+
+            hos.text = averageSleep.toString()
+            af.text = ("$averageFeeling/10")
+
+            //make a chart
             lineChart = binding.graphVisualization
             lineList = ArrayList()
             lineList2 = ArrayList()
