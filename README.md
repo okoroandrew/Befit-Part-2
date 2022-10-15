@@ -1,41 +1,36 @@
-# Android Project 5 - *BeFit*
+# Android Project 6 - *BeFit Part 2*
 
-Submitted by: **Okoro Blessing Andrew**
+Submitted by: **Blessing Andrew Okoro**
 
-**Befit** is a health metrics app that allows users to track their sleep and know their feelings 
+**Befit Part 2** is a health metrics app that allows users to track ... our sleep and feeling 
 
-Time spent: **15** hours spent in total
+Time spent: **11** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **At least one health metric is tracked (based on user input)**
-  - Chosen metric(s): `Sleep`
-- [x] **There is a "create entry" UI that prompts users to make their daily entry**
-- [x] **New entries are saved in a database and then updated in the RecyclerView**
-- [x] **On application restart, previously entered entries are preserved (i.e., are *persistent*)**
- 
+- [x] **Use at least 2 Fragments**
+- [x] **Create a new dashboard fragment where users can see a summary of their entered data**
+- [x] **Use one of the Navigation UI Views (BottomNavigation, Drawer Layout, Top Bar) to move between the fragments**
+
 The following **optional** features are implemented:
 
-- [x] **Create a UI for tracking averages and trends in metrics**
-- [x] **Improve and customize the user interface through styling and coloring**
-- [ ] **Implement orientation responsivity**
-- [ ] **Add a daily photo feature**
+- [x] **Add a more advanced UI (e.g: Graphing) for tracking trends in metrics**
+- [] **Implement daily notifications to prompt users to fill in their data**
 
 The following **additional** features are implemented:
 
-- [x] **I used a date picket dialog to choose date**
-- [x] **I used a floating action button**
+- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='walkthrough2.gif' title='Video Walkthrough. Data persist after restarting the app' width='' alt='Video Walkthrough' />
 
-[peek](https://github.com/phw/peek) for Linux. -->
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
