@@ -72,10 +72,8 @@ class DashboardFragment : Fragment() {
             //make a chart
             lineChart = binding.graphVisualization
             lineList = ArrayList()
-            lineList2 = ArrayList()
-            for (i in 0 until sleeps.size-1){
+            for (i in 0 until sleeps.size){
                 lineList.add(Entry(sleeps[i].toFloat(), feelings[i].toFloat()))
-                lineList2.add(Entry(feelings[i].toFloat(), i.toFloat()))
             }
 
             lineDataSet = LineDataSet(lineList, "Line Chart Data")
